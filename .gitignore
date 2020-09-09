@@ -1,7 +1,10 @@
 #ignorar resultados de compilacion
 build/
 #ignorar vscode
-.vscode
+.vscode/
+#ignorar visual studio
+.vs/
+out/
 #ignorar archivos de clangd
 .clangd
 #ignorar idea
