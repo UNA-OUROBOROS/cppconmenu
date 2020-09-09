@@ -1,19 +1,25 @@
 #pragma once
-#include <vector>
-#include <string>
+#include <conmenu/opcion.hpp>
 
-class opcion;
+#include <string>
+#include <vector>
+
 class submenu;
 
-class menu {
+class menu : protected opcion {
 	std::vector<opcion *> opciones;
 	std::string titulo;
+
   public:
 	menu(std::string titulo);
 	void mostrar(bool submenu = false);
 	void agregarOpcion(opcion *opcion);
-	void agregarSubMenu(submenu *s);
+	void agregarSubMenu(menu *s);
+
   protected:
 	std::string getTitulo();
 	static void limpiar();
+
+	std::string getNombre() override;
+	bool ejecutar() override;
 };

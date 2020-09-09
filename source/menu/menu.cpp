@@ -45,7 +45,13 @@ void menu::mostrar(bool submenu) {
 	}
 }
 void menu::agregarOpcion(opcion *opcion) { opciones.push_back(opcion); }
-void menu::agregarSubMenu(submenu *s) { agregarOpcion((opcion *)s); }
+void menu::agregarSubMenu(menu *s) { agregarOpcion((opcion *)s); }
 
 std::string menu::getTitulo() { return titulo; }
 void menu::limpiar() { system("clear"); }
+
+std::string menu::getNombre() { return getTitulo(); }
+bool menu::ejecutar() {
+	mostrar(true);
+	return true;
+}

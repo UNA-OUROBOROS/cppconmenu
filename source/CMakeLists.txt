@@ -7,7 +7,6 @@ enable_testing()
 
 set(conmenu_include
     include/conmenu/menu.hpp
-    include/conmenu/submenu.hpp
     include/conmenu/opcion.hpp
 )
 
@@ -17,7 +16,6 @@ set(src_include
 
 set(src_menu
     menu/menu.cpp
-    menu/submenu.cpp
 )
 
 set(src
