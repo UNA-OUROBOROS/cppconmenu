@@ -57,3 +57,4 @@ bool menu::ejecutar() {
 	mostrar(true);
 	return true;
 }
+opcion::~opcion() = default;
