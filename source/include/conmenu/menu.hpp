@@ -10,7 +10,7 @@ class menu {
 	std::string titulo;
   public:
 	menu(std::string titulo);
-	void mostrar();
+	void mostrar(bool alterno = false);
 	void agregarOpcion(opcion *opcion);
 	void agregarSubMenu(submenu *s);
   protected:

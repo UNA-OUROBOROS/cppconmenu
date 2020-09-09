@@ -1,17 +1,25 @@
 #include <conmenu/menu.hpp>
 #include <conmenu/opcion.hpp>
 #include <iostream>
-
+#include <iomanip>
 
 using std::cout;
 using std::cin;
 
 menu::menu(std::string titulo) : titulo(titulo) {}
 
-void menu::mostrar() {
+void menu::mostrar(bool alterno) {
 		while (true) {
 			limpiar();
-			cout << "* -> " << titulo << "------------\n";
+			if(alterno){
+				cout << std::right << std::setfill('-') << std::setw(49);
+				cout << " " + titulo + " <- *\n";
+			}
+			else{
+				cout << "* -> " << std::left << std::setfill('-') << std::setw(43);
+				cout << titulo + " " << "\n";
+			}
+			
 			for (size_t i = 0; i < opciones.size(); i++) {
 				cout << i + 1 << ". " << opciones[i]->getNombre() << ".\n";
 			}
