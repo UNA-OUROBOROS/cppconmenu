@@ -21,7 +21,11 @@ void menu::mostrar(bool submenu) {
 		}
 
 		for (size_t i = 0; i < opciones.size(); i++) {
-			cout << i + 1 << ". " << opciones[i]->getNombre() << ".\n";
+			cout << i + 1 << ". ";
+			if (dynamic_cast<menu *>(opciones[i])) {
+				cout << "=> ";
+		}
+			cout << opciones[i]->getNombre() << ".\n";
 		}
 		cout << opciones.size() + 1 << ". ";
 		cout << (submenu ? "Regresar" : "Salir");

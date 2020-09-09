@@ -6,7 +6,7 @@
 
 class submenu;
 
-class menu : protected opcion {
+class menu : public opcion {
 	std::vector<opcion *> opciones;
 	std::string titulo;
 
