@@ -8,8 +8,6 @@ class submenu;
 
 class menu : public opcion {
 	std::vector<opcion *> opciones;
-	std::string titulo;
-
   public:
 	menu(std::string titulo);
 	void mostrar(bool submenu = false);
@@ -17,9 +15,6 @@ class menu : public opcion {
 	void agregarSubMenu(menu *s);
 
   protected:
-	std::string getTitulo();
 	static void limpiar();
-
-	std::string getNombre() override;
 	bool ejecutar() override;
 };

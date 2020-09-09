@@ -6,17 +6,17 @@
 using std::cin;
 using std::cout;
 
-menu::menu(std::string titulo) : titulo(titulo) {}
+menu::menu(std::string nombre) : opcion(nombre) {}
 
 void menu::mostrar(bool submenu) {
 	while (true) {
 		limpiar();
 		if (submenu) {
 			cout << std::right << std::setfill('-') << std::setw(49);
-			cout << " " + titulo + " <- *\n";
+			cout << " " + getNombre() + " <- *\n";
 		} else {
 			cout << "* -> " << std::left << std::setfill('-') << std::setw(43);
-			cout << titulo + " "
+			cout << getNombre() + " "
 			     << "\n";
 		}
 
@@ -51,10 +51,8 @@ void menu::mostrar(bool submenu) {
 void menu::agregarOpcion(opcion *opcion) { opciones.push_back(opcion); }
 void menu::agregarSubMenu(menu *s) { agregarOpcion((opcion *)s); }
 
-std::string menu::getTitulo() { return titulo; }
 void menu::limpiar() { system("clear"); }
 
-std::string menu::getNombre() { return getTitulo(); }
 bool menu::ejecutar() {
 	mostrar(true);
 	return true;

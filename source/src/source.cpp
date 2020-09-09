@@ -5,13 +5,10 @@ using std::cin;
 using std::cout;
 
 class opcionDummy : public opcion {
-	std::string nombre;
-
   public:
-	opcionDummy(std::string nombre) : nombre(nombre) {}
-	std::string getNombre() override { return nombre; }
+	opcionDummy(std::string nombre) : opcion(nombre) {}
 	bool ejecutar() override {
-		cout << "hola, me llamo: \"" << nombre << "\".\n";
+		cout << "hola, me llamo: \"" << getNombre() << "\".\n";
 		cin.ignore();
 		return true;
 	}

@@ -2,7 +2,10 @@
 #include <string>
 
 class opcion {
+	std::string nombre;
+
   public:
-	virtual std::string getNombre() = 0;
+	opcion(std::string nombre) : nombre(nombre) {}
+	virtual std::string getNombre() { return nombre; };
 	virtual bool ejecutar() = 0;
 };
