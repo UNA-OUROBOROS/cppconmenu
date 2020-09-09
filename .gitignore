@@ -1,0 +1,11 @@
+#ignorar resultados de compilacion
+build/
+#ignorar vscode
+.vscode
+#ignorar archivos de clangd
+.clangd
+#ignorar idea
+.idea
+cmake-build-debug/
+#ignorar comandos de compilacion (para clangd entre otros)
+compile_commands.json
