@@ -40,7 +40,7 @@ void menu::mostrar(bool submenu) {
 					return;
 				}
 				limpiar();
-				opciones[opcion - 1]->ejecutar();
+				opciones[static_cast<size_t>(opcion) - 1]->ejecutar();
 			}
 		} else {
 			cin.clear();
