@@ -16,11 +16,11 @@ class opcionDummy : public opcion {
 
 int main(int, char **) {
 	menu principal("menu principal");
-	menu sub("sub menu");
-	sub.agregarOpcion(new opcionDummy("opcion a"));
-	sub.agregarOpcion(new opcionDummy("opcion b"));
-	sub.agregarOpcion(new opcionDummy("opcion c"));
+	menu* sub = new menu("sub menu");
+	sub->agregarOpcion(new opcionDummy("opcion a"));
+	sub->agregarOpcion(new opcionDummy("opcion b"));
+	sub->agregarOpcion(new opcionDummy("opcion c"));
 	principal.agregarOpcion(new opcionDummy("opcion principal"));
-	principal.agregarSubMenu(&sub);
+	principal.agregarSubMenu(sub);
 	principal.mostrar();
 }

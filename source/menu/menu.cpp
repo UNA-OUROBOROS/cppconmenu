@@ -24,7 +24,7 @@ void menu::mostrar(bool submenu) {
 			cout << i + 1 << ". ";
 			if (dynamic_cast<menu *>(opciones[i])) {
 				cout << "=> ";
-		}
+			}
 			cout << opciones[i]->getNombre() << ".\n";
 		}
 		cout << opciones.size() + 1 << ". ";
@@ -57,4 +57,11 @@ bool menu::ejecutar() {
 	mostrar(true);
 	return true;
 }
+
+menu::~menu() {
+	for (auto *ptr : opciones) {
+		delete ptr;
+	}
+}
+
 opcion::~opcion() = default;
