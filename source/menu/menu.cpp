@@ -51,7 +51,13 @@ void menu::mostrar(bool submenu) {
 void menu::agregarOpcion(opcion *opcion) { opciones.push_back(opcion); }
 void menu::agregarSubMenu(menu *s) { agregarOpcion((opcion *)s); }
 
-void menu::limpiar() { system("clear"); }
+void menu::limpiar() {
+#ifdef WIN32
+	system("cls");
+#else
+	system("clear");
+#endif
+}
 
 bool menu::ejecutar() {
 	mostrar(true);
