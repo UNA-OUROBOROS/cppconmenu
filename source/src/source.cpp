@@ -6,7 +6,7 @@ using std::cout;
 
 class opcionDummy : public opcion {
   public:
-	opcionDummy(std::string nombre) : opcion(nombre) {}
+	opcionDummy(const std::string& nombre) : opcion(nombre) {}
 	bool ejecutar() override {
 		cout << "hola, me llamo: \"" << getNombre() << "\".\n";
 		cin.ignore();
