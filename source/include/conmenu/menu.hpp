@@ -10,7 +10,7 @@ class menu : public opcion {
 	std::vector<opcion *> opciones;
 
   public:
-	menu(std::string titulo);
+	explicit menu(std::string titulo);
 	void mostrar(bool submenu = false);
 	void agregarOpcion(opcion *opcion);
 	void agregarSubMenu(menu *s);
