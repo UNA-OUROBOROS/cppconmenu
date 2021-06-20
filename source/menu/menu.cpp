@@ -52,7 +52,7 @@ void menu::agregarOpcion(opcion *opcion) { opciones.push_back(opcion); }
 void menu::agregarSubMenu(menu *s) { agregarOpcion((opcion *)s); }
 
 void menu::limpiar() {
-#ifdef WIN32
+#ifdef _WIN32
 	system("cls");
 #else
 	system("clear");
