@@ -2,6 +2,7 @@
 build/
 #ignorar vscode
 .vscode/
+.cache/
 #ignorar visual studio
 .vs/
 out/
